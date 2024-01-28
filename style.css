@@ -1,0 +1,209 @@
+  @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300;1,400;1,900&family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+body{
+    background-color: black;
+    color: #fff;
+}
+/* text animation */
+.text{
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    animation:typing 2s steps(29),
+            cursor .3s step-end infinite alternate;
+
+}
+@keyframes cursor{
+    50%{border-color:transparent}
+}
+@keyframes typing{
+    from{width :0}
+}
+header nav{
+    background-color: #7ca58e ;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+}
+nav img{
+    width: 50px;
+    height: 50px;   
+}
+header nav form{
+    display: flex;
+    justify-content: center;
+
+}
+form input{
+    flex-grow: 1;
+    margin-right: 10px;
+}
+form input,
+button{
+    border: none;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 20px;
+    outline: none;
+}
+form button{
+    background-color: #bbb3a4;
+    cursor: pointer;
+}
+form button:hover, .recipe-closeBtn:hover{
+    background-color:  #EEE7DA;
+}
+
+/* main section */
+.recipe-container{
+    text-align: center;
+    margin-top: 20px;
+    word-spacing: 5px;
+    font-size: 25px;
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap:40px;
+    width: 80%;
+    margin: 10px auto;
+    padding: 20px;
+    place-items: center;
+}
+.recipe{
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    color:black;
+    box-shadow: 0 5px 10px rgba(176, 170, 170, 0.1), -5px -5px 10px rgba(34,34,34,0.5);
+    border-radius: 5px;
+    cursor: pointer;
+    max-width: 350px;
+    transition: transform 0.3s ease-in-out;
+}
+.recipe:hover{
+    transform: scale(1.02);
+
+}
+.recipe img{
+    height: 300px;
+}
+.recipe h3{
+    font-size: 24px;
+    margin-block: 5px;
+}
+.recipe p{
+    font-size: 20px;
+    color: #4a4a4a;
+    margin: 5px 0;
+}
+.recipe button{
+    font-size: 20px;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 50px;
+    cursor: pointer;
+    background-color: #5F8670;
+    margin: 10px auto;
+}
+.recipe button:hover{
+    background-color: #7ca58e;
+}
+.recipe-details{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% ,-50%);
+    background-color: #7ca58e ;
+    -webkit-transform: translate(-50% ,-50%);
+    border-radius: 12px;
+    width: 40%;
+    height: 60%;
+    font-size: 20px;
+    transition: all 0.5s ease-in-out;
+    overflow-y: scroll; 
+}
+.recipe-details-content{
+    padding: 30px;
+}
+.recipeName{
+    text-align: center;
+    color:  black;
+   
+}
+.ingredientList{
+    margin-top: 10px;
+    margin-left: 20px;
+    list-style:  circle;
+}
+.recipeInstructions p{
+    line-height: 30px;
+    white-space: pre-line;   
+}
+.recipeName, .ingredientList, .recipeInstructions{
+    margin-bottom: 10px;
+}
+.recipe-closeBtn{
+  border: none;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 4px;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #bbb3a4;
+  right: 2px;
+  color: black;
+
+}
+/* for scroll bar */
+.recipe-details::-webkit-scrollbar{
+    width: 8px;
+}
+/* for scroll bar styling */
+.recipe-details::-webkit-scrollbar-thumb{
+    background-color: #bbb3a4;
+    border-radius: 16px;
+}
+body::-webkit-scrollbar{
+    width: 10px;
+}
+body::-webkit-scrollbar-thumb{
+    background-color: #bbb3a4;
+}
+body::-webkit-scrollbar-track{
+    background-color: white;
+}
+
+/* media querires */
+@media screen and (max-width:600px){
+    header nav{
+        flex-direction: column;
+    }
+    header nav form{
+        width: 80%;
+        margin-top: 20px;
+    }
+    .text{
+        font-size: 20px;
+        margin-right: 25px;
+        
+    }
+    .recipe-details{
+        width: 70%;
+        height: 60%;
+
+    }
+
+}
+
